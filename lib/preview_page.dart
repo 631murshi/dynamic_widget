@@ -14,9 +14,6 @@ class PreviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Preview"),
-      ),
       body: Column(
         children: [
           Expanded(
