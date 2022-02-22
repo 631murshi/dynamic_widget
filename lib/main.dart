@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Dynamic Widget',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -33,30 +34,15 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(""),
         ),
         body: CustomScrollView(slivers: [
-          SliverPadding(
-              padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-              sliver: SliverList(
-                delegate: SliverChildListDelegate([
-                  ElevatedButton(
-                    child: Text("Dynamic Widget Json String Export Example"),
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => JSONExporter()));
-                    },
-                  )
-                ]),
-              )),
           SliverPadding(
             padding: EdgeInsets.all(20),
             sliver: SliverGrid(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 mainAxisSpacing: 10,
-                crossAxisCount: 3,
+                crossAxisCount: 2,
                 crossAxisSpacing: 10,
               ),
               delegate: SliverChildListDelegate([
@@ -66,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
+                             builder: (context) =>
                                 CodeEditorPage(listview)));
                   },
                 ),
